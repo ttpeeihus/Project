@@ -1,0 +1,23 @@
+<!-- Trong file index.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MySQL Data</title>
+</head>
+<body>
+    <h1>MySQL Data</h1>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Actions</th>
+        </tr>
+        <% users.forEach(function(user) { %> <!-- Duyệt qua mảng dữ liệu từ MySQL -->
+        <tr>
+            <td><%= user.username %></td> <!-- Hiển thị dữ liệu từ MySQL bằng thẻ <%= %> -->
+            <td><button><a href="/profile/<%= user.id %>">add</a></button></td>
+        </tr>
+        <% }) %>
+    </table>
+</body>
+</html>

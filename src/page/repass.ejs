@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MewShop</title>
+    <link rel="stylesheet" href="/css/sigin.css">
+    <link rel="shortcut icon" type="image/png" href= "/img/logo/logopage.png">
+    
+</head>
+<body>
+    <section>
+        <div class="login">
+            <a href="/login"><div class="title">Chào mừng đến MewShop</div></a>
+            <div class="group">
+                <input type="text" id="username"
+                    placeholder="Tên người dùng">
+            </div>
+            <div class="group">
+                <input type="password" id="password"
+                    placeholder="Mật khẩu mới">
+                <span id="showPassword">
+                    <ion-icon name="eye-outline"></ion-icon>
+                    <ion-icon name="eye-off-outline"></ion-icon>
+                </span>
+            </div>
+            <div class="group">
+                <input type="password" id="checkpassword"
+                    placeholder="Nhập lại mật khẩu" oninput="checkPasswordMatch()">
+                <span id="showcheckPassword">
+                    <ion-icon name="eye-outline"></ion-icon>
+                    <ion-icon name="eye-off-outline"></ion-icon>
+                </span>
+            </div>
+            <div class="group">
+                <input type="text" id="email"
+                    placeholder="Email" oninput="checkPasswordMatch()">
+            </div>
+            <div class="signIn">
+                <button type="submit">Đặt lại mật khẩu</button>
+            </div>
+        </div>
+        
+    </section>
+<script src="/js/repass.js"></script>
+<script type = "module" src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" > </script> 
+<script nomodule src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

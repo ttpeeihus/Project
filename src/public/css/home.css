@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@1400&display=swap');
+
+body {
+font-family: 'Roboto', sans-serif;
+background-color: #d4d4d4;
+margin: 0;
+padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color:#1c1f25;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    top:0px;
+    width:100%;
+    height:60px;
+    background-color: #8AAAE5;
+    padding:0px 25px 25px 25px;
+}
+header img{
+    padding-top: 5px;
+    height:30px;
+    width:auto;
+    margin-left:10px;
+}
+header h1{
+    font-family: 'Courier New', Courier, monospace;
+    color:white;
+    margin-left: 10px;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-left:50px;
+    width:50%;
+    border-radius: 10px;
+}
+
+#search-bar {
+    flex:1;
+    padding: 5px;
+    height:30px;
+    width:auto;
+    border:none;
+    border-radius: 10px;
+}
+
+#search-button {
+    background-color: rgb(80, 255, 255);
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin:5px;
+    padding-left:0;
+}
+#search-button:hover {
+    background-color: rgb(126, 253, 253);
+}
+#search-button:active {
+    background-color: rgb(46, 255, 255);
+}
+header .banner{
+    padding-left: 25px;
+    height:80px;
+}
+header .hover,.hover1{
+    display:none;
+}
+header .user-account {
+    margin-top:5px;
+    margin-right: 75px;
+}
+header .alert{
+    display: flex;
+    margin-left: auto;
+    cursor:pointer;
+}
+header .shopping {
+    display: flex;
+    cursor:pointer;
+}
+header .shopping ion-icon:nth-child(1) {
+    margin-top: 10px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+header .shopping span {
+    background-color: rgb(255, 114, 121);
+    border-radius: 50%;
+    color: #fff;
+    position: absolute;
+    border: rgb(24, 24, 24) solid 1px;
+    padding-left:6px;
+    padding-right:6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-left:25px;
+}
+header .alert span {
+    background-color: rgb(255, 114, 121);
+    border-radius: 50%;
+    color: #fff;
+    position: absolute;
+    border: rgb(24, 24, 24) solid 1px;
+    padding-left:6px;
+    padding-right:6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-left:25px;
+}
+    
+/* .username {
+    position:absolute;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 12px;
+    margin-left: 5px;
+    max-width: 50px;
+}     */
+.list {
+padding-left:50px;
+padding-right: 50px;
+width: 100%-10px;
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px; /* Khoảng cách giữa các cột */
+margin-top: 120px;
+margin-bottom: 30px;
+}
+
+.card {
+position: fixed;
+top:62px;
+width: 0%;
+right: 6%;
+background-color: rgba(255, 255, 255, 0.692);
+height:0;
+transition: 0.1s;
+border-radius: 10px;
+overflow:auto;
+}
+.card .titlecard{
+    color:#868686;
+    padding:10px;
+    font-size: 30px;
+}
+
+.card .logocard img{
+    width:26%;
+    padding-top:20px;
+    right:37%;
+    position: absolute;
+}
+
+.card p{
+    padding-top: 100px;
+    text-align: center;
+}
+
+.card .loginalert{
+    bottom: 0;
+    height: 10%;
+    width: 100%;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(2, 1fr);
+}
+.card .loginalert div{
+    height:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.card .loginalert div:hover{
+    background-color: #868686;
+    color:white;
+}
+
+.card .checkout {
+bottom: 0;
+height: 10%;
+width: 100%;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+}
+
+.card .checkout div {
+background-color: #53a7f7;
+width: 100%;
+height: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+font-weight: bold;
+cursor: pointer;
+}
+
+.card .checkout a div:nth-child(1) {
+background-color: #6ad6f7;
+color: #fff;
+}
+
+.card .checkout div:nth-child(3) {
+background-color: #1c2521;
+color: #fff;
+}
+
+.active .card {
+    height: auto;  
+    max-height:90vh;
+    width: 25%;
+}
+
+.list .item {
+border-radius: 10px;
+text-align: center;
+background-color: #ffffff;
+padding: 20px;
+letter-spacing: 1px;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.list .item img {
+width: 60%;
+}
+
+.list .item .title {
+    margin-top: 10px;
+    font-weight: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list .item .price {
+margin: 10px;
+}
+
+.list .item button {
+background-color: #1c1f25;
+color: #fff;
+padding: 10px;
+width: 100%;
+border-radius: 10px;
+cursor:pointer;
+border:none;
+}
+
+.list .item button:hover {
+    background-color: #474b53;
+}
+
+.list .item button:active {
+    background-color: #242629;
+}
+
+.listCard li {
+display: grid;
+grid-template-columns: 75px repeat(3, 1fr);
+color: #555555;
+margin-bottom: 10px;
+}
+
+.listCard li div {
+display: flex;
+align-items: center;
+font-weight: 100;
+font-size: small;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.listCard li img {
+width: 100%;
+}
+
+.listCard button {
+width: auto;
+background-color: rgba(58, 58, 58, 0.333);
+border: none;
+}
+
+.listCard .count {
+margin: 0 10px;
+}
+
+.tabalert {
+    position:fixed;
+    width:0;
+    height:0;
+    background-color: rgba(255, 255, 255, 0.692);
+    top:62px;
+    right: 9%;
+    transition: 0.1s;
+    overflow:auto;
+    border-radius: 10px;
+}
+.tabalert .titlealert{
+    color:#868686;
+    padding:10px;
+    font-size: 30px;
+}
+.activealert .tabalert {
+    height: auto;  
+    max-height:90vh;
+    width: 25%;
+}
+.tabalert .mesalert div{
+    margin-top: 10px;
+    font-weight: 100;
+}
+.tabalert .mesalert .unreadmes {
+    padding:10px;
+    background-color: #d4d4d4;
+    border-radius: 10px;
+}
+.tabalert img{
+    width:26%;
+    padding-top:20px;
+    right:37%;
+    position: absolute;
+}
+
+.tabalert p{
+    padding-top: 100px;
+    text-align: center;
+}
+
+.tabalert .loginalert{
+    bottom: 0;
+    height: 10%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.tabalert .loginalert div{
+height:30px;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+}
+.tabalert .loginalert div:hover{
+background-color: #868686;
+color:white;
+}
+
+.carduser {
+    position:fixed;
+    width:0;
+    height:0;
+    background-color: rgba(255, 255, 255, 0.692);
+    top:62px;
+    right: 50px;
+    transition: 0.1s;
+    border-radius: 10px;
+    display:none;
+}
+.carduser img{
+    margin-right: 10px;
+}
+.carduser div{
+    padding:10px;
+    margin:10px;
+    border-radius: 10px;
+}
+.carduser .logout{
+    cursor: pointer;
+}
+.carduser div:hover{
+    background-color: #868686;
+}
+.activecarduser .carduser {
+    height: auto;  
+    width: auto;
+    display:block;
+}
+
+.list .item button:active{
+    background-color: #000000;
+}
