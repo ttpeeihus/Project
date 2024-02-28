@@ -1,19 +1,12 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "src/app.js",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "src/app.js"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/"
-      }
-    ]
+    "builds": [{ "src": "src/app.js", "use": "@vercel/node" }],
+    "env": {
+      "PORT":3000,  
+      "MYSQL_HOST": "localhost",
+      "MYSQL_USER": "root",
+      "MYSQL_PASSWORD": "12345678",
+      "MYSQL_DATABASE": "nodeapp"
+    }
   }
+  

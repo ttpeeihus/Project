@@ -1,10 +1,11 @@
 import mysql from 'mysql2/promise';
 
 const pool = mysql.createPool ({
-    host: 'localhost',
-    user: 'root',
-    password: '12345678',
-    database: 'nodeapp'
+    host: MYSQL_HOST,
+    user: MYSQL_USER,
+    password: MYSQL_PASSWORD,
+    database:  MYSQL_DATABASE
+    
 });
 const [rows,fields] = await pool.execute('select * from account');
 console.log(rows);
