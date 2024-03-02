@@ -16,13 +16,22 @@ let getProfilepage = async (req, res) => {
     return res.send(JSON.stringify(rows));
 }
 let getPaypage = async (req, res) => {
-    let [rows,fields] = await pool.execute('select * from account ');
-    let [name,a] = await pool.execute('select * from book ');
-    return res.render('pay.ejs',{users: rows,book: name});
-}
-let gettest= async (req, res) => {
-    let [rows,fields] = await pool.execute('select * from account ');
-    return res.render('test.ejs',{users: rows});
+    let [book,a] = await pool.execute('select * from book ');
+    if (req.session.loggedin) {
+        let[dev,b] =  await pool.execute('SELECT username FROM admin WHERE username = ?',[req.session.username]);
+        if(dev.length==0){
+            let [alertmes,c] = await pool.execute('SELECT alert FROM alertuser WHERE username = ? AND status = "read"',[req.session.username]);
+            let [unreadmes,d] = await pool.execute('SELECT alert FROM alertuser WHERE username = ? AND status = "unread"',[req.session.username]);
+		    res.render('pay.ejs',{username: req.session.username, book: book, mesalert: alertmes, mesalertunread: unreadmes });
+        } else {
+            let [alertmes,c] = await pool.execute('select * from alertadmin ');
+            res.render('pay.ejs',{username: req.session.username, book: book, mesalert: alertmes, mesalertunread: unreadmes });
+        }
+        console.log('đăng nhập thành công');
+	} else {
+		res.render('home.ejs',{username: 'Đăng nhập',book: book});
+        console.log('Chưa đăng nhập');
+	}
 }
 let getHomepage = async (req, res) => {
     let [book,a] = await pool.execute('select * from book ');
@@ -116,7 +125,6 @@ export default {
     getProfilepage,
     getloginpage,
     getPaypage,
-    gettest,
     createUser,
     checkin,
     Repass,

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MewShop</title>
+    <title>Page not found</title>
     <link rel="stylesheet" href="/css/home.css">
     <link rel="shortcut icon" type="image/png" href="/img/logo/logopage.png">
 </head>
-<body>
+<body style="background-color: hwb(0 99% 0%);">
     <div class="container">
         <header>
             <a href="/home"><img class="banner" src="/img/logo/logo.png"></a>
@@ -34,33 +34,36 @@
             </div>
         </header>
         <div class="list"></div>
-
     </div>
     <div class="card">
         <div class="titlecard">Giỏ hàng</div>
-        <ul class="listCard"></ul>
-        <div class="checkout">
-            <div class="total">0</div>
-            <a href="/home/pay"><div class="thanhtoan">Thanh toán</div></a>
+        <div class="logocard"><img src="/img/logo/bag.png"></div>
+        <p>Đăng nhập để xem Giỏ hàng</p>
+        <div class="loginalert">
+            <a href="/login"><div>Đăng nhập</div></a>
+            <a href="/register"><div>Đăng ký</div></a>
         </div>
     </div>
     <div class="tabalert">
         <div class="titlealert">Thông báo</div>
-        <ul class="mesalert"></ul>
+        <div class="logoalert"><img src="/img/logo/alert.png"></div>
+        <p>Đăng nhập để xem Thông báo</p>
+        <div class="loginalert">
+            <a href="/login"><div>Đăng nhập</div></a>
+            <a href="/register"><div>Đăng ký</div></a>
+        </div>
     </div>
-    <div class="carduser">
-        <div class="username"><img src="/img/logo/user.png"><%= username%></div>
-        <div class="logout" onclick="logout()"><img src="/img/logo/logout.png">Đăng xuất</div>
+    <div class="carduser" style="height: auto;  
+    width: auto;
+    display:block;">
+        <a href="/login"><div class="username"><img src="/img/logo/login.png">Đăng nhập</div></a>
+        <a href="/register"><div class="logout" ><img src="/img/logo/signup.png">Đăng ký</div></a>
+    </div>
+    <div class="img404" style="width:100%;text-align: center; margin-top: -40px;">
+        <img src="/img/background/404img.jpg" style="width:700px;height:auto;display:block;margin:auto;">
     </div>
 <script>
-var unreadmes = <%- JSON.stringify(mesalertunread) %>;
-var mesalert = <%- JSON.stringify(mesalert) %>;
-var username = <%- JSON.stringify(username) %>;
-var bookArray = <%- JSON.stringify(book) %>;
 </script>   
-<script src="/js/homelogin.js"></script>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<!-- https://ionic.io/ionicons -->
+<script src="/js/home.js"></script>
 </body>
 </html>

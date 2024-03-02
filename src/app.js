@@ -6,6 +6,12 @@ import initWebRoute from './route/web.js'
 import initapi from './route/api.js'
 import dotenv from 'dotenv';
 import session from 'express-session';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 dotenv.config();
 
 const app = express()
@@ -26,7 +32,13 @@ app.use(express.json());
 configview(app);
 initWebRoute(app);
 initapi(app);
-
+// Sau khi khai báo tất cả các route của bạn
+app.use((req, res, next) => {
+	// Nếu không có route nào khớp với đường dẫn của người dùng
+	// Thì gửi file 404.html cho người dùng
+	res.status(404).sendFile(__dirname + '/public/404.html');
+  });
+  
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })

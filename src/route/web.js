@@ -10,9 +10,7 @@ const initWebRoute = (app) => {
     router.get('/register', homeController.getSigninpage)
     router.get('/repass', homeController.getRepasspage)
     router.get('/profile/:id', homeController.getProfilepage)
-    router.get('/home/pay', homeController.getPaypage)
     router.get('/home', homeController.getHomepage)
-    router.get('/', homeController.gettest)
     router.get('/home/pay', homeController.getPaypage)
     router.post('/adduser', homeController.createUser);
     router.post('/checkin', homeController.checkin);
