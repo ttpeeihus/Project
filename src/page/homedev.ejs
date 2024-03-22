@@ -24,30 +24,24 @@
                 <img class="hover" src="/img/logo/alerthover.svg">
                 <span class="alerts">0</span>
             </div>
-            <div class="shopping">
+            <div class="shopping" style="display:none">
                 <img class="nohover1" src="/img/logo/bagshopping.svg">
                 <img class="hover1" src="/img/logo/bagshoppinghover.svg">
                 <span class="quantity">0</span>
             </div>
             <div class="user-account">
                 <img src="/img/logo/avatar.svg">
-               <span class="username"><%= username%></span>
             </div>
         </header>
         <div class="list"></div>
-
-    </div>
-    <div class="card">
-        <div class="titlecard">Giỏ hàng</div>
-        <ul class="listCard"></ul>
-        <div class="checkout">
-            <div class="total">0</div>
-            <a href="/home/pay"><div class="thanhtoan">Thanh toán</div></a>
-        </div>
     </div>
     <div class="tabalert">
         <div class="titlealert">Thông báo</div>
-        <ul class="mesalert"></ul>
+        <div class="mesalert"></div>
+    </div>
+    <div class="carduser">
+        <div class="username"><img src="/img/logo/user.png"><%= username%></div>
+        <div class="logout" onclick="logout()"><img src="/img/logo/logout.png">Đăng xuất</div>
     </div>
 <script>
 var unreadmes = <%- JSON.stringify(mesalertunread) %>;

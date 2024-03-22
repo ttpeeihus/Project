@@ -312,12 +312,13 @@ margin: 0 10px;
 }
 .activealert .tabalert {
     height: auto;  
-    max-height:90vh;
+    max-height:50vh;
     width: 25%;
 }
 .tabalert .mesalert div{
-    margin-top: 10px;
+    margin-left: 10px;
     font-weight: 100;
+    padding-bottom:5px;
 }
 .tabalert .mesalert .unreadmes {
     padding:10px;
@@ -389,4 +390,8 @@ color:white;
 
 .list .item button:active{
     background-color: #000000;
+}
+/* Css của thông báo */
+.mes{
+
 }

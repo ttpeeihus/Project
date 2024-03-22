@@ -1,10 +1,10 @@
-import express from 'express'
+const express = require('express');
 
-const configview=(app)=>{
+const configview = (app) => {
     app.use(express.static('./src/public'));
 
-    app.set("view engine","ejs");
-    app.set("views","./src/page")
-}
+    app.set("view engine", "ejs");
+    app.set("views", "./src/page");
+};
 
-export default configview;
+module.exports = configview;

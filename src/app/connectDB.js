@@ -1,12 +1,18 @@
-import mysql from 'mysql2/promise';
+const mysql = require('mysql2/promise');
 
-const pool = mysql.createPool ({
-    host: 'localhost',
-    user: 'root',
-    password: '12345678',
-    database:  'nodeapp'
-
+const pool = mysql.createPool({
+  host: 'localhost',
+  user: 'root',
+  password: '12345678',
+  database: 'nodeapp'
 });
-const [rows,fields] = await pool.execute('select * from account');
-console.log(rows);
-export default pool;
+
+pool.execute('select * from account')
+  .then(([rows, fields]) => {
+    console.log(rows);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+
+module.exports = pool;
