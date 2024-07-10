@@ -7,6 +7,15 @@ const pool = mysql.createPool({
   database: 'nodeapp'
 });
 
+/* deploy Cpanel
+const pool = mysql.createPool({
+  host: 'localhost',
+  user: 'nguyen88_shopee',
+  password: '1Gs6a^u]~A{j',
+  database: 'nguyen88_shopee'
+});
+*/
+
 pool.execute('select * from account')
   .then(([rows, fields]) => {
     console.log(rows);

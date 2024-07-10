@@ -36,14 +36,6 @@
         <div class="list"></div>
 
     </div>
-    <div class="card">
-        <div class="titlecard">Giỏ hàng</div>
-        <ul class="listCard"></ul>
-        <div class="checkout">
-            <div class="total">0</div>
-            <a href="/home/pay"><div class="thanhtoan">Thanh toán</div></a>
-        </div>
-    </div>
     <div class="tabalert">
         <div class="titlealert">Thông báo</div>
         <ul class="mesalert"></ul>
@@ -51,14 +43,8 @@
     <div class="carduser">
         <div class="username"><img src="/img/logo/user.png"><%= username%></div>
         <div class="logout" onclick="logout()"><img src="/img/logo/logout.png">Đăng xuất</div>
-    </div>
-<script>
-var unreadmes = <%- JSON.stringify(mesalertunread) %>;
-var mesalert = <%- JSON.stringify(mesalert) %>;
-var username = <%- JSON.stringify(username) %>;
-var bookArray = <%- JSON.stringify(book) %>;
-</script>   
-<script src="/js/homelogin.js"></script>
+    </div>   
+<script src="/js/pay.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <!-- https://ionic.io/ionicons -->

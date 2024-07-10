@@ -44,10 +44,10 @@
         <div class="logout" onclick="logout()"><img src="/img/logo/logout.png">Đăng xuất</div>
     </div>
 <script>
-var unreadmes = <%- JSON.stringify(mesalertunread) %>;
-var mesalert = <%- JSON.stringify(mesalert) %>;
+var unreadMessages = <%- JSON.stringify(unreadAlerts) %>;
+var readMessages = <%- JSON.stringify(readAlerts) %>;
 var username = <%- JSON.stringify(username) %>;
-var bookArray = <%- JSON.stringify(book) %>;
+var bookArray = <%- JSON.stringify(books) %>;
 </script>   
 <script src="/js/homedev.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
