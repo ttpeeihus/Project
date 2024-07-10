@@ -60,21 +60,21 @@ function initApp(){
         `;
         list.appendChild(newDiv);
     });
-    mesalert.forEach((value)=>{
+    readMessages.forEach((value)=>{
         let newDiv = document.createElement('div');
         newDiv.innerHTML = `
             <div class="mes">${value.alert}</div>
         `;
         mealert.appendChild(newDiv);
     })
-    unreadmes.forEach((value)=>{
+    unreadMessages.forEach((value)=>{
         let newDiv = document.createElement('div');
         newDiv.innerHTML = `
             <div class="unreadmes">${value.alert}</div>
         `;
         mealert.appendChild(newDiv);
     })
-    quantityale.innerText = unreadmes.length;
+    quantityale.innerText = unreadMessages.length;
     addbutton();
 }
 function addbutton(){

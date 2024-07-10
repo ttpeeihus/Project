@@ -4,17 +4,19 @@ const homeController = require('../controller/homeController.js');
 const router = express.Router();
 
 const initWebRoute = (app) => {
-    router.get('/login', homeController.getloginpage);
-    router.get('/register', homeController.getSignuppage);
-    router.get('/repass', homeController.getRepasspage);
-    router.get('/home', homeController.getHomepage);
+    router.get('/login', homeController.getLoginPage);
+    router.get('/register', homeController.getSignupPage);
+    router.get('/repass', homeController.getResetPasswordPage);
+    router.get('/home', homeController.getHomePage);
+    router.get('/home/pay', homeController.getPaymentPage);
 
     router.post('/adduser', homeController.createUser);
-    router.post('/checkin', homeController.checkin);
-    router.post('/repas', homeController.Repass);
-    router.post('/deletebook', homeController.Deletebook);
-    router.post('/logout', homeController.logout);
-    router.post('/readmes', homeController.readmes);
+    router.post('/checkin', homeController.userLogin);
+    router.post('/repas', homeController.resetPassword);
+    router.post('/deletebook', homeController.deleteBook);
+    router.post('/logout', homeController.userLogout);
+    router.post('/readmes', homeController.markMessagesRead);
+    router.post('/addproduct', homeController.addProduct);
 
     // Sử dụng EJS làm view engine
     app.set("view engine", "ejs");
